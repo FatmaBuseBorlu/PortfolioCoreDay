@@ -18,6 +18,7 @@ namespace PortfolioCoreDay.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult CreateTestimonial(Testimonial testimonial)
         {
@@ -25,6 +26,30 @@ namespace PortfolioCoreDay.Controllers
             context.SaveChanges();
             return RedirectToAction("TestimonialList");
         }
+
+        public IActionResult DeleteTestimonial(int id) 
+        {
+            var value = context.Testimonials.Find(id);
+            context.Testimonials.Remove(value);
+            context.SaveChanges();
+            return RedirectToAction("TestimonialList");
+        }
+
+        [HttpGet]
+        public IActionResult UpdateTestimonial(int id)
+        {
+            var value=context.Testimonials.Find(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateTestimonial (Testimonial testimonial)
+        {
+            context.Testimonials.Update(testimonial);
+            context.SaveChanges();
+            return RedirectToAction("TestimonialList");
+        }
+            
 
     }
 }

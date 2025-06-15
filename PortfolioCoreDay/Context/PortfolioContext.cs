@@ -14,6 +14,7 @@ namespace PortfolioCoreDay.Context
         public DbSet<Message> Messages { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<Skill> Skills { get; set; }
         
     }
 }
