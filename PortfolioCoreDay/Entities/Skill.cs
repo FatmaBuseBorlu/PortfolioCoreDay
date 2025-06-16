@@ -4,7 +4,7 @@
     {
         public int SkillId {  get; set; }
         public string SkillName { get; set; }
-        public string SkillValue { get; set; }
+        public int SkillValue { get; set; }
 
     }
 }
