@@ -1,62 +1,67 @@
-#  Dinamik Kişisel Web Paneli ve Admin Arayüzü – ASP.NET Core MVC
+#  Dynamic Personal Web Panel & Admin Interface – ASP.NET Core MVC
 
-Bu proje, hem **kullanıcı** hem de **yönetici** arayüzünü kapsayan, veritabanı temelli tam dinamik bir kişisel portfolyo sistemidir. ASP.NET Core 8.0 altyapısıyla geliştirilen bu sistemde, içeriklerin tamamı dinamik olarak yönetilebilir şekilde tasarlanmıştır.
-
-## Proje Özeti
-
-Bu proje kapsamında kullanıcı arayüzü ve admin paneline ait birçok özellik başarıyla geliştirilmiştir:
-
-### Kullanıcı Paneli Özellikleri
-
-- `Hakkımda`, `Yetenekler`, `Deneyimler`, `Eğitim` gibi bölümler veritabanı ile tam entegre.
-- `İstatistikler` kısmı dinamik hale getirildi (örnek: toplam proje, yetenek sayısı, gelen mesaj sayısı, rastgele istatistikler).
-- `Çalışmalarım` kısmında **kategori filtreleme** özelliği ile UX geliştirildi.
-- `Hizmetlerim` bölümünde **son 6 hizmet** dinamik olarak listelendi.
-- **SweetAlert2** ile kullanıcıya görsel ve işlevsel bildirimler entegre edildi.
-
-###  Admin Paneli Özellikleri
-
-- Tüm bölümler için **tam dinamik içerik yönetimi** sağlandı.
-- Admin panelinde içerik yönetimini kolaylaştıran **Card-Title** yapısı oluşturuldu.
-- Projeye özel bir **404 hata sayfası** eklendi.
-- Dashboard kısmı **10 farklı istatistik** ile zenginleştirildi.
+This is a **fully dynamic personal portfolio management system** built with **ASP.NET Core 8.0**. It includes both a **user interface** and a **custom admin panel**, with complete database integration for dynamic content management.
 
 ---
 
-##  Kullanılan Teknolojiler
+##  Project Overview
+
+This application allows full CRUD control over personal portfolio content via an admin dashboard, while delivering a clean and modern UI for public users.
+
+###  User Panel Features
+
+- Fully database-driven sections: `About`, `Skills`, `Experience`, `Education`
+- Dynamic `Statistics` area showing:
+  - Total number of projects
+  - Number of skills
+  - Total messages received
+  - Randomized metrics
+- `Portfolio` section includes **category-based filtering**
+- `Services` section dynamically lists the **latest 6 services**
+- **SweetAlert2** integration for interactive alert pop-ups
+
+###  Admin Panel Features
+
+- Fully dynamic content management system for all sections
+- Custom **Card-Title** UI components for editing entities
+- Custom-designed **404 Error Page**
+- Admin dashboard includes **10+ dynamic statistics widgets**
+
+---
+
+##  Technologies Used
 
 - **ASP.NET Core 8.0**
-- **Entity Framework Core** (Code First + Migration)
+- **Entity Framework Core** (Code First + Migrations)
 - **SQL Server**
-- **Razor View + ViewComponent**
+- **Razor View Engine**
+- **ViewComponent** architecture
 - **HTML / CSS / Bootstrap 5**
 - **JavaScript / SweetAlert2**
-- **Katmanlı mimari:** `Entity`, `DAL`, `UI`
-- **Prensipler:** SOLID, DRY
+- **Layered Architecture:** Entity, Data Access, UI
+- **Principles Followed:** SOLID, DRY
 
 ---
-## Öğrendiklerim
-ViewComponent mimarisi ile modüler yapı tasarımı
 
-EF Core ile ilişkili tablo yönetimi ve migration süreçleri
+##  What I Learned
 
-Katmanlı mimaride temiz kod yazımı ve SOLID prensiplerinin uygulanması
+- Designing modular architecture using `ViewComponent`
+- Managing relational data with **EF Core** and `Migrations`
+- Writing clean, maintainable code in a layered architecture
+- Implementing **user interaction enhancements** using SweetAlert2
+- Developing and managing **dynamic web content**
 
-SweetAlert2 gibi JS kütüphanelerle kullanıcı etkileşimi artırma
+---
 
-Dinamik içerik oluşturma ve yönetme becerileri
-
-##  Proje Yapısı
+##  Project Structure
 
 ```plaintext
 PortfolioCoreProject/
-├── PortfolioCoreDay.Entities        # Entity sınıfları (About, Skill, Experience vb.)
-├── PortfolioCoreDay.DataAccess      # Entity Framework veri erişim katmanı
-├── PortfolioCoreDay.WebUI           # Razor View, ViewComponent, Controller'lar
+├── PortfolioCoreDay.Entities        # Entity classes (About, Skill, Experience, etc.)
+├── PortfolioCoreDay.DataAccess      # Data access layer using EF Core
+├── PortfolioCoreDay.WebUI           # Presentation layer (Razor Views, Controllers)
 ├── Views/
-│   ├── Default/                     # Ana sayfa bölümleri
-│   ├── Shared/Components/          # ViewComponent parçaları
-│   ├── Admin/                      # Admin paneli
-│   └── Error/                      # Özel hata sayfaları
-
-
+│   ├── Default/                     # User-facing sections
+│   ├── Shared/Components/          # ViewComponent definitions
+│   ├── Admin/                      # Admin dashboard views
+│   └── Error/                      # Custom error pages
