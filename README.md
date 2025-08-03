@@ -6,7 +6,7 @@ Bu proje, hem **kullanıcı** hem de **yönetici** arayüzünü kapsayan, verita
 
 Bu proje kapsamında kullanıcı arayüzü ve admin paneline ait birçok özellik başarıyla geliştirilmiştir:
 
-### 👤 Kullanıcı Paneli Özellikleri
+### Kullanıcı Paneli Özellikleri
 
 - `Hakkımda`, `Yetenekler`, `Deneyimler`, `Eğitim` gibi bölümler veritabanı ile tam entegre.
 - `İstatistikler` kısmı dinamik hale getirildi (örnek: toplam proje, yetenek sayısı, gelen mesaj sayısı, rastgele istatistikler).
@@ -35,6 +35,16 @@ Bu proje kapsamında kullanıcı arayüzü ve admin paneline ait birçok özelli
 - **Prensipler:** SOLID, DRY
 
 ---
+Öğrendiklerim
+ViewComponent mimarisi ile modüler yapı tasarımı
+
+EF Core ile ilişkili tablo yönetimi ve migration süreçleri
+
+Katmanlı mimaride temiz kod yazımı ve SOLID prensiplerinin uygulanması
+
+SweetAlert2 gibi JS kütüphanelerle kullanıcı etkileşimi artırma
+
+Dinamik içerik oluşturma ve yönetme becerileri
 
 ##  Proje Yapısı
 
@@ -48,3 +58,5 @@ PortfolioCoreProject/
 │   ├── Shared/Components/          # ViewComponent parçaları
 │   ├── Admin/                      # Admin paneli
 │   └── Error/                      # Özel hata sayfaları
+
+
