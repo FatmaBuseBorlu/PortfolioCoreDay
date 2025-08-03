@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PortfolioCoreDay.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
@@ -30,17 +31,24 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - PortfolioCoreDay - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted mt-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>&copy; 2025 - PortfolioCoreDay - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></span>
+
+            <div>
+                @await Component.InvokeAsync("_DefaultSocialMediaComponentPartial")
+
+            </div>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

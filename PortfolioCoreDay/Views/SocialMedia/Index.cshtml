@@ -1,0 +1,31 @@
+﻿@model List<PortfolioCoreDay.Entities.SocialMedia>
+
+@{
+    ViewData["Title"] = "Sosyal Medya Listesi";
+}
+
+<h2>Sosyal Medya Listesi</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Başlık</th>
+            <th>İkon</th>
+            <th>URL</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td><i class="@item.Icon fa-lg"></i></td>
+                <td><a href="@item.Url" target="_blank">@item.Url</a></td>
+                <td><a href="/SocialMedia/Delete/@item.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/SocialMedia/Add" class="btn btn-primary">Yeni Sosyal Medya Ekle</a>

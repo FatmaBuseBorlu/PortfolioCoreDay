@@ -1,0 +1,13 @@
+﻿@model List<PortfolioCoreDay.Entities.MyJob>
+
+<h3 class="mt-4">İş Deneyimleri</h3>
+@foreach (var item in Model)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@item.Title - <small class="text-muted">@item.Company</small></h5>
+            <p class="card-text">@item.Description</p>
+            <p class="card-text"><small class="text-muted">@item.Date.ToShortDateString()</small></p>
+        </div>
+    </div>
+}

@@ -22,6 +22,123 @@ namespace PortfolioCoreDay.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("PortfolioCoreDay.Entities.About", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Age")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Birthday")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Degree")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FooterDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Freelance")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LongDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Website")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Abouts");
+                });
+
+            modelBuilder.Entity("PortfolioCoreDay.Entities.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("PortfolioCoreDay.Entities.Contact", b =>
+                {
+                    b.Property<int>("ContactID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactID"), 1L, 1);
+
+                    b.Property<string>("Adress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContactID");
+
+                    b.ToTable("Contacts");
+                });
+
             modelBuilder.Entity("PortfolioCoreDay.Entities.Education", b =>
                 {
                     b.Property<int>("EducationId")
@@ -115,6 +232,68 @@ namespace PortfolioCoreDay.Migrations
                     b.ToTable("Messages");
                 });
 
+            modelBuilder.Entity("PortfolioCoreDay.Entities.MyJob", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MyJobs");
+                });
+
+            modelBuilder.Entity("PortfolioCoreDay.Entities.Portfolio", b =>
+                {
+                    b.Property<int>("PortfolioId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PortfolioId"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GithubUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PortfolioId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Portfolios");
+                });
+
             modelBuilder.Entity("PortfolioCoreDay.Entities.Service", b =>
                 {
                     b.Property<int>("ServiceId")
@@ -147,6 +326,13 @@ namespace PortfolioCoreDay.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SkillId"), 1L, 1);
 
+                    b.Property<string>("SkillCategory")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("SkillDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("SkillName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -157,6 +343,53 @@ namespace PortfolioCoreDay.Migrations
                     b.HasKey("SkillId");
 
                     b.ToTable("Skills");
+                });
+
+            modelBuilder.Entity("PortfolioCoreDay.Entities.SocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialMedias");
+                });
+
+            modelBuilder.Entity("PortfolioCoreDay.Entities.Statistic", b =>
+                {
+                    b.Property<int>("StatisticID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StatisticID"), 1L, 1);
+
+                    b.Property<int>("MessageCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjectCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkillCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("StatisticID");
+
+                    b.ToTable("Statistics");
                 });
 
             modelBuilder.Entity("PortfolioCoreDay.Entities.Testimonial", b =>
@@ -186,6 +419,22 @@ namespace PortfolioCoreDay.Migrations
                     b.HasKey("TestimonialId");
 
                     b.ToTable("Testimonials");
+                });
+
+            modelBuilder.Entity("PortfolioCoreDay.Entities.Portfolio", b =>
+                {
+                    b.HasOne("PortfolioCoreDay.Entities.Category", "Category")
+                        .WithMany("Portfolios")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("PortfolioCoreDay.Entities.Category", b =>
+                {
+                    b.Navigation("Portfolios");
                 });
 #pragma warning restore 612, 618
         }

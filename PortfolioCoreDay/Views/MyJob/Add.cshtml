@@ -1,0 +1,23 @@
+﻿@model PortfolioCoreDay.Entities.MyJob
+
+<h2>Yeni İş Ekle</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Company"></label>
+        <input asp-for="Company" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control" type="date" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Kaydet</button>
+</form>

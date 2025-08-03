@@ -1,12 +1,44 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "İstatistikler";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
+<h2 style="margin-bottom: 20px;">İstatistikler</h2>
 
-<h2>İstatistikler</h2>
+<!-- GÖRÜNÜR 6 İSTATİSTİK -->
+<div style="padding: 15px; background: #cce5ff; border-radius: 12px; margin-bottom: 12px;">Toplam Yetenek Sayısı: @ViewBag.v1</div>
+<div style="padding: 15px; background: #fff3cd; border-radius: 12px; margin-bottom: 12px;">Yeteneklerin Toplam Değeri: @ViewBag.v2</div>
+<div style="padding: 15px; background: #d4edda; border-radius: 12px; margin-bottom: 12px;">Yeteneklerin Ortalama Değeri: @ViewBag.v3</div>
+<div style="padding: 15px; background: #dee2e6; border-radius: 12px; margin-bottom: 12px;">80’den Büyük Yetenek Sayısı: @ViewBag.v4</div>
+<div style="padding: 15px; background: #d1ecf1; border-radius: 12px; margin-bottom: 12px;">Frontend Kategorisindeki Yetenek Sayısı: @ViewBag.v5</div>
+<div style="padding: 15px; background: #f8d7da; border-radius: 12px; margin-bottom: 12px;">Backend Kategorisindeki Yetenek Sayısı: @ViewBag.v6</div>
 
-<div class="alert alert-primary">Toplam Yetenek Sayısı: @ViewBag.v1</div>
-<div class="alert alert-warning">Yeteneklerin Toplam Değeri: @ViewBag.v2</div>
-<div class="alert alert-success">Yeteneklerin Ortalama Değeri: @ViewBag.v3</div>
-<div class="alert alert-dark">80'den Büyük Yetenek Sayısı: @ViewBag.v4</div>
 
+<!-- GİZLİ 4 İSTATİSTİK -->
+<div id="extraStats" style="display: none;">
+    <div style="padding: 15px; background: #a7ffeb; border-radius: 12px; margin-bottom: 12px;">
+        2025 Yılında Eklenen Yetenek Sayısı: @ViewBag.v7
+    </div>
+    <div style="padding: 15px; background: #e0bbff; border-radius: 12px; margin-bottom: 12px;">
+        Son Eklenen Yetenek: @ViewBag.v8
+    </div>
+    <div style="padding: 15px; background:	#ffdab9; border-radius: 12px; margin-bottom: 12px;">
+        Toplam Kategori Sayısı: @ViewBag.v9
+    </div>
+    <div style="padding: 15px; background: #f9c6d1; border-radius: 12px; margin-bottom: 12px;">
+        Veri Güncellenme Tarihi: @ViewBag.v10
+    </div>
+</div>
+
+<script>
+    function toggleExtraStats() {
+        var stats = document.getElementById("extraStats");
+        stats.style.display = stats.style.display === "none" ? "block" : "none";
+    }
+</script>
+<!-- BUTON SAYFANIN EN ALTINDA -->
+<div style="display: flex; justify-content: flex-start; margin-top: 25px;">
+    <button onclick="toggleExtraStats()"
+            style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+        Tüm İstatistikleri Göster
+    </button>
+</div>

@@ -1,0 +1,40 @@
+﻿@model List<PortfolioCoreDay.Entities.MyJob>
+
+@{
+    ViewData["Title"] = "My Jobs";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>İşlerim</h2>
+
+<table class="table table-bordered table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Firma</th>
+            <th>Tarih</th>
+            <th>Açıklama</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@item.Company</td>
+                <td>@item.Date.ToShortDateString()</td>
+                <td>@item.Description</td>
+                <td>
+                    <a asp-controller="MyJob" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Add" class="btn btn-primary">Yeni İş Ekle</a>
