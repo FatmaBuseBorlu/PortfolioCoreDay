@@ -2,7 +2,6 @@
 
 This is a **fully dynamic personal portfolio management system** built with **ASP.NET Core 8.0**. It includes both a **user interface** and a **custom admin panel**, with complete database integration for dynamic content management.
 
----
 
 ##  Project Overview
 
@@ -27,7 +26,6 @@ This application allows full CRUD control over personal portfolio content via an
 - Custom-designed **404 Error Page**
 - Admin dashboard includes **10+ dynamic statistics widgets**
 
----
 
 ##  Technologies Used
 
@@ -41,7 +39,7 @@ This application allows full CRUD control over personal portfolio content via an
 - **Layered Architecture:** Entity, Data Access, UI
 - **Principles Followed:** SOLID, DRY
 
----
+
 
 ##  What I Learned
 
@@ -51,7 +49,7 @@ This application allows full CRUD control over personal portfolio content via an
 - Implementing **user interaction enhancements** using SweetAlert2
 - Developing and managing **dynamic web content**
 
----
+
 
 ##  Project Structure
 
