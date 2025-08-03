@@ -35,7 +35,7 @@ Bu proje kapsamında kullanıcı arayüzü ve admin paneline ait birçok özelli
 - **Prensipler:** SOLID, DRY
 
 ---
-Öğrendiklerim
+## Öğrendiklerim
 ViewComponent mimarisi ile modüler yapı tasarımı
 
 EF Core ile ilişkili tablo yönetimi ve migration süreçleri
